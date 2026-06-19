@@ -167,34 +167,26 @@ img { max-width: 100%; }
 }
 .hero-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 18%; display: block; }
 
-.orbit-ellipse {
-  position: absolute; top: 50%; left: 50%; width: 0; height: 0; z-index: 3;
-  --radius: 218px; --k: 1.22;
-  transform: scaleY(var(--k));
-}
-.orbit-ring {
-  animation: orbit-spin 48s linear infinite;
+.orbit-track {
+  position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+  width: 100%; max-width: 380px; aspect-ratio: 4/5; z-index: 3; pointer-events: none;
 }
 .orbit-icon {
-  position: absolute; top: 0; left: 0;
-  transform: rotate(var(--angle)) translateX(var(--radius));
-}
-.orbit-icon-inner {
-  position: absolute; width: 44px; height: 44px; border-radius: 50%; background: #FFFFFF;
-  border: 1px solid rgba(36,36,36,0.1); box-shadow: 0 14px 26px -14px rgba(36,36,36,0.45);
+  position: absolute; top: 0; left: 0; width: 44px; height: 44px; border-radius: 50%;
+  background: #FFFFFF; border: 1px solid rgba(36,36,36,0.1);
+  box-shadow: 0 14px 26px -14px rgba(36,36,36,0.45);
   display: flex; align-items: center; justify-content: center;
-  transform: translate(-50%, -50%) rotate(calc(-1 * var(--angle))) scaleY(calc(1 / var(--k)));
-  animation: orbit-counter-spin 48s linear infinite;
+  offset-path: inset(-32px round 50px);
+  offset-rotate: 0deg;
+  offset-anchor: 50% 50%;
+  animation: orbit-move 48s linear infinite;
+  animation-delay: calc(var(--i) * -4.8s);
 }
-.orbit-icon-inner img { width: 20px; height: 20px; }
+.orbit-icon img { width: 20px; height: 20px; }
 
-@keyframes orbit-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-@keyframes orbit-counter-spin {
-  from { transform: translate(-50%, -50%) rotate(calc(-1 * var(--angle))) scaleY(calc(1 / var(--k))); }
-  to { transform: translate(-50%, -50%) rotate(calc(-1 * var(--angle) - 360deg)) scaleY(calc(1 / var(--k))); }
+@keyframes orbit-move {
+  from { offset-distance: 0%; }
+  to { offset-distance: 100%; }
 }
 
 .float-card { position: absolute; display: flex; align-items: center; gap: 14px; border-radius: 14px; }
