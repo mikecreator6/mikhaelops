@@ -29,6 +29,7 @@ img { max-width: 100%; }
 .section--results { padding-top: clamp(56px, 7vw, 96px); padding-bottom: clamp(56px, 7vw, 96px); }
 .section--lg { padding-top: clamp(56px, 7vw, 100px); padding-bottom: clamp(56px, 7vw, 100px); }
 .section--final { padding-top: clamp(40px, 5vw, 72px); padding-bottom: clamp(56px, 7vw, 96px); }
+.section--tight-top { padding-top: clamp(40px, 5vw, 76px); }
 
 .dot {
   width: 7px; height: 7px; border-radius: 50%;
