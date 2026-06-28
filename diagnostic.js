@@ -274,24 +274,7 @@ function computeResult() {
   else if (score >= 60) hoursRange = "10 à 15 heures par semaine";
   else if (score >= 40) hoursRange = "8 à 12 heures par semaine";
 
-  const strengths = [];
-  if (a.usageIA === "Tous les jours") strengths.push("Vous connaissez déjà les outils IA");
-  if (a.taille && a.taille !== "Seul") strengths.push("Vous avez une équipe structurée");
-  if (a.process === "La plupart" || a.process === "Tout est documenté") strengths.push("Vous avez déjà de bonnes bases de process");
-  strengths.push("Vous cherchez activement à optimiser votre productivité");
-
-  const weaknesses = [];
-  if (a.process === "Aucun" || a.process === "Quelques-uns") weaknesses.push("Peu de process documentés");
-  if (perte >= 3) weaknesses.push("Beaucoup de tâches répétitives identifiées");
-  if (a.usageIA === "Jamais" || a.usageIA === "Occasionnellement") weaknesses.push("Faible niveau d'automatisation IA");
-  if (weaknesses.length === 0) weaknesses.push("Quelques optimisations restent possibles malgré de bonnes bases");
-
-  return {
-    score,
-    hoursRange,
-    strengths: strengths.slice(0, 3),
-    weaknesses: weaknesses.slice(0, 3),
-  };
+  return { score, hoursRange };
 }
 
 function sendLeadToSheet(result) {
@@ -327,9 +310,6 @@ function sendLeadToSheet(result) {
 function renderResultStep() {
   const r = state.result || computeResult();
 
-  const strengthsHtml = r.strengths.map((s) => `<li class="diag-result-item diag-result-item--ok">✔ ${s}</li>`).join("");
-  const weaknessesHtml = r.weaknesses.map((s) => `<li class="diag-result-item diag-result-item--warn">⚠ ${s}</li>`).join("");
-
   app.innerHTML = `
     <div class="diag-step diag-fade-in diag-result-step">
       <div class="diag-score-circle">
@@ -340,21 +320,10 @@ function renderResultStep() {
         Votre entreprise pourrait probablement économiser entre <strong>${r.hoursRange}</strong> grâce à une meilleure organisation, des automatisations et des assistants IA.
       </p>
 
-      <div class="diag-result-grid">
-        <div class="diag-result-card">
-          <h3 class="diag-result-title">Vos principaux points forts</h3>
-          <ul class="diag-result-list">${strengthsHtml}</ul>
-        </div>
-        <div class="diag-result-card">
-          <h3 class="diag-result-title">Vos axes d'amélioration</h3>
-          <ul class="diag-result-list">${weaknessesHtml}</ul>
-        </div>
-      </div>
-
       <div class="final-cta diag-final-cta">
         <div class="final-cta-glow" aria-hidden="true"></div>
         <div class="final-cta-content">
-          <h2 class="final-cta-title">Prêt à passer au <span class="hl-text">niveau supérieur</span> ?</h2>
+          <h2 class="final-cta-title diag-final-cta-title">Prêt à passer au <span class="hl-text">niveau supérieur</span> ?</h2>
           <a href="https://calendly.com/mikhael-creator/30min" target="_blank" rel="noopener" class="btn btn-accent btn-xl">
             Réserver un appel découverte
             <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>

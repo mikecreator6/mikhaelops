@@ -547,6 +547,7 @@ img { max-width: 100%; }
 .diag-result-item--warn { color: #6b6b66; }
 
 .diag-final-cta { padding: clamp(40px, 5vw, 64px) clamp(24px, 4vw, 48px); }
+.diag-final-cta-title { font-size: clamp(24px, 3.2vw, 36px); margin-bottom: 18px; }
 .diag-secondary-link { margin-top: 22px; }
 
 @media (max-width: 560px) {
