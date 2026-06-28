@@ -78,7 +78,17 @@ function toggleOption(q, option) {
   } else {
     state.answers[q.key] = option;
   }
-  render();
+  updateOptionsUI(q);
+}
+
+function updateOptionsUI(q) {
+  const answer = currentAnswer(q.key);
+  app.querySelectorAll(".diag-option").forEach((btn) => {
+    const selected = q.multi ? (answer || []).includes(btn.dataset.option) : answer === btn.dataset.option;
+    btn.classList.toggle("diag-option--selected", selected);
+  });
+  const nextBtn = document.getElementById("diag-next");
+  if (nextBtn) nextBtn.disabled = !isAnswered(q);
 }
 
 function renderQuestionStep() {
