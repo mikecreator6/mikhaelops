@@ -54,7 +54,8 @@ img { max-width: 100%; }
 .section-title--md { font-size: clamp(30px, 3.6vw, 46px); line-height: 1.06; max-width: 640px; }
 .section-title--lg { font-size: clamp(32px, 4vw, 52px); line-height: 1.04; letter-spacing: -0.03em; margin-bottom: 24px; }
 .section-title--light { color: #F6F6F3; }
-.results-subtitle { font-style: italic; color: rgba(246,246,243,0.6); font-size: 16px; margin-top: 10px; }
+.results-subtitle { font-style: italic; color: rgba(246,246,243,0.6); font-size: 18px; margin-top: 10px; }
+.section-title--nowrap { max-width: none; white-space: nowrap; }
 
 .section-head {
   display: flex; align-items: flex-end; justify-content: space-between;
@@ -603,4 +604,5 @@ img { max-width: 100%; }
   .press-title { margin-top: 40px; }
   .press-row { gap: 24px; }
   .press-logo { height: 32px; }
+  .section-title--nowrap { white-space: normal; }
 }
