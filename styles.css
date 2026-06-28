@@ -459,7 +459,7 @@ img { max-width: 100%; }
   display: inline-flex; align-items: center; gap: 8px; text-decoration: none; color: #242424;
   font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 15px;
 }
-.diag-wrap { max-width: 720px; padding-top: clamp(24px, 4vw, 48px); padding-bottom: clamp(56px, 8vw, 96px); }
+.diag-wrap { max-width: 720px; padding-top: clamp(24px, 4vw, 48px); padding-bottom: 104px; }
 .diag-app { position: relative; }
 
 .diag-step { width: 100%; }
@@ -508,7 +508,13 @@ img { max-width: 100%; }
   border-radius: 50%; background: #242424;
 }
 
-.diag-actions { display: flex; justify-content: center; }
+.diag-actions {
+  display: flex; justify-content: center;
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 10;
+  padding: 16px 20px calc(16px + env(safe-area-inset-bottom));
+  background: linear-gradient(to top, #F6F6F3 60%, rgba(246,246,243,0));
+}
+.diag-actions .diag-next { width: 100%; max-width: 360px; justify-content: center; }
 .diag-next:disabled { opacity: 0.35; cursor: not-allowed; box-shadow: none; transform: none; }
 .diag-next:disabled:hover { transform: none; background: #C3FA0A; }
 
