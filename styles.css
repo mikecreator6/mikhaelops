@@ -12,9 +12,10 @@ body {
 img { max-width: 100%; }
 ::selection { background: #C3FA0A; color: #242424; }
 
-#prestations, #coaching, #apropos, #resultats, #contact {
+#prestations, #cas-concrets, #resultats, #contact {
   scroll-margin-top: 88px;
 }
+#apropos { scroll-margin-top: 96px; }
 
 .wrap {
   max-width: 1180px;
