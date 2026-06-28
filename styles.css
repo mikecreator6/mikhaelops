@@ -567,16 +567,25 @@ img { max-width: 100%; }
   .diag-wrap { padding-left: 20px; padding-right: 20px; }
 }
 
+.press-title {
+  text-align: center;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #8a8a83;
+  margin-top: 56px;
+  margin-bottom: 20px;
+}
 .press-row {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
   gap: clamp(28px, 5vw, 56px);
-  margin-top: 56px;
 }
 .press-logo {
-  height: 28px;
+  height: 44px;
   width: auto;
   object-fit: contain;
   opacity: 0.7;
@@ -586,6 +595,7 @@ img { max-width: 100%; }
 .press-logo:hover { opacity: 1; filter: grayscale(0%); }
 
 @media (max-width: 560px) {
-  .press-row { gap: 24px; margin-top: 40px; }
-  .press-logo { height: 22px; }
+  .press-title { margin-top: 40px; }
+  .press-row { gap: 24px; }
+  .press-logo { height: 32px; }
 }
