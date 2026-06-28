@@ -45,7 +45,7 @@ const QUESTIONS = [
     key: "souhait",
     label: "Si vous pouviez récupérer une seule chose immédiatement, laquelle choisiriez-vous ?",
     multi: false,
-    options: ["5 heures par semaine", "10 heures par semaine", "Des process plus clairs", "Une équipe plus productive", "Plus aucune tâche répétitive"],
+    options: ["15 heures par semaine", "Des process plus clairs", "Une équipe plus productive", "Plus aucune tâche répétitive"],
   },
 ];
 
