@@ -463,10 +463,10 @@ img { max-width: 100%; }
 .diag-app { position: relative; }
 
 .diag-step { width: 100%; }
-.diag-fade-in { animation: diag-fade .35s ease both; }
+.diag-fade-in { animation: diag-fade .35s ease; }
 @keyframes diag-fade {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 .diag-progress-meta { font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 13.5px; color: #8a8a85; text-align: center; margin-bottom: 10px; }
