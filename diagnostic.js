@@ -1,7 +1,7 @@
 // ===================== Diagnostic IA — logique & rendu =====================
 
 // URL du Google Apps Script Web App (à remplacer une fois déployé — voir GOOGLE_SHEETS_SETUP.md)
-const SHEET_WEBHOOK_URL = "REMPLACE_PAR_TON_URL_WEB_APP";
+const SHEET_WEBHOOK_URL = "https://script.google.com/macros/s/AKfycbyG1KRvxbnak_nozYsVKHzfMMEqD6x2Ey29VOTwAe3u6apPMEa7HL075b3RDS3GbmPt_w/exec";
 
 const QUESTIONS = [
   {
