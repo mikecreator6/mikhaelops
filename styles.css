@@ -453,7 +453,11 @@ img { max-width: 100%; }
 /* ===== Diagnostic — page /diagnostic ===== */
 .diag-body { background: #F6F6F3; }
 .diag-topbar {
-  padding-top: 24px; padding-bottom: 0; display: flex; align-items: center; justify-content: flex-end;
+  padding-top: 24px; padding-bottom: 0; display: flex; align-items: center; justify-content: space-between;
+}
+.diag-back {
+  display: inline-flex; align-items: center; gap: 8px; text-decoration: none; color: #242424;
+  font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 15px;
 }
 .diag-wrap { max-width: 720px; padding-top: clamp(24px, 4vw, 48px); padding-bottom: 104px; }
 .diag-app { position: relative; }
