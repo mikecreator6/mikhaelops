@@ -518,7 +518,7 @@ img { max-width: 100%; }
 .diag-next:disabled { opacity: 0.35; cursor: not-allowed; box-shadow: none; transform: none; }
 .diag-next:disabled:hover { transform: none; background: #C3FA0A; }
 
-.diag-lead-form { display: grid; gap: 18px; margin-top: 8px; }
+.diag-lead-form { display: grid; gap: 12px; margin-top: 8px; }
 .diag-field { display: grid; gap: 8px; }
 .diag-field label { font-size: 13.5px; font-weight: 700; color: #45453f; }
 .diag-input {
@@ -529,11 +529,13 @@ img { max-width: 100%; }
 .diag-input:focus { outline: none; border-color: #242424; }
 .diag-input--invalid { border-color: #e0483e; }
 
-.diag-phone-row { display: grid; grid-template-columns: minmax(150px, 0.9fr) 1fr; gap: 10px; }
-.diag-dial-select { padding: 15px 10px; cursor: pointer; }
+.diag-phone-row { display: grid; grid-template-columns: 120px 1fr; gap: 8px; }
+.diag-dial-select { padding: 15px 8px; cursor: pointer; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 
 @media (max-width: 560px) {
-  .diag-phone-row { grid-template-columns: 1fr; }
+  .diag-phone-row { grid-template-columns: 108px 1fr; gap: 6px; }
+  .diag-dial-select { padding: 13px 4px; font-size: 13.5px; }
+  .diag-phone-row .diag-input { padding-left: 12px; padding-right: 12px; }
 }
 
 .diag-error { display: block; min-height: 16px; font-size: 12.5px; color: #e0483e; margin-top: 2px; }
