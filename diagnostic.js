@@ -31,9 +31,9 @@ const QUESTIONS = [
   },
   {
     key: "usageIA",
-    label: "À quel point utilisez-vous l'IA aujourd'hui ?",
+    label: "À quel point utilisez-vous dans votre business aujourd'hui ?",
     multi: false,
-    options: ["Jamais", "Occasionnellement", "Tous les jours", "Toute l'équipe l'utilise"],
+    options: ["Jamais", "Occasionnellement", "Tous les jours"],
   },
   {
     key: "objectif",
@@ -203,7 +203,7 @@ function computeResult() {
   const processScore = { "Aucun": 25, "Quelques-uns": 17, "La plupart": 8, "Tout est documenté": 2 };
   score += processScore[a.process] || 0;
 
-  const iaScore = { "Jamais": 25, "Occasionnellement": 15, "Tous les jours": 7, "Toute l'équipe l'utilise": 2 };
+  const iaScore = { "Jamais": 25, "Occasionnellement": 15, "Tous les jours": 7 };
   score += iaScore[a.usageIA] || 0;
 
   const perte = Array.isArray(a.perteTemps) ? a.perteTemps.length : 0;
@@ -220,7 +220,7 @@ function computeResult() {
   else if (score >= 40) hoursRange = "8 à 12 heures par semaine";
 
   const strengths = [];
-  if (a.usageIA === "Tous les jours" || a.usageIA === "Toute l'équipe l'utilise") strengths.push("Vous connaissez déjà les outils IA");
+  if (a.usageIA === "Tous les jours") strengths.push("Vous connaissez déjà les outils IA");
   if (a.taille && a.taille !== "Seul") strengths.push("Vous avez une équipe structurée");
   if (a.process === "La plupart" || a.process === "Tout est documenté") strengths.push("Vous avez déjà de bonnes bases de process");
   strengths.push("Vous cherchez activement à optimiser votre productivité");
