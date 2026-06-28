@@ -139,14 +139,17 @@ function renderQuestionStep() {
 }
 
 const COUNTRY_CODES = [
-  { code: "+33", label: "🇫🇷 +33" },
-  { code: "+32", label: "🇧🇪 +32" },
-  { code: "+41", label: "🇨🇭 +41" },
-  { code: "+1", label: "🇨🇦 +1" },
-  { code: "+352", label: "🇱🇺 +352" },
-  { code: "+212", label: "🇲🇦 +212" },
-  { code: "+213", label: "🇩🇿 +213" },
-  { code: "+216", label: "🇹🇳 +216" },
+  { code: "+33", label: "🇫🇷 France +33" },
+  { code: "+32", label: "🇧🇪 Belgique +32" },
+  { code: "+41", label: "🇨🇭 Suisse +41" },
+  { code: "+352", label: "🇱🇺 Luxembourg +352" },
+  { code: "+1", label: "🇨🇦 Canada +1" },
+  { code: "+212", label: "🇲🇦 Maroc +212" },
+  { code: "+213", label: "🇩🇿 Algérie +213" },
+  { code: "+216", label: "🇹🇳 Tunisie +216" },
+  { code: "+221", label: "🇸🇳 Sénégal +221" },
+  { code: "+225", label: "🇨🇮 Côte d'Ivoire +225" },
+  { code: "+971", label: "🇦🇪 Dubaï (UAE) +971" },
 ];
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
