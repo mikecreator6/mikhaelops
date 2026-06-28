@@ -31,7 +31,7 @@ const QUESTIONS = [
   },
   {
     key: "usageIA",
-    label: "À quel point utilisez-vous dans votre business aujourd'hui ?",
+    label: "À quel point utilisez-vous l'IA dans votre business aujourd'hui ?",
     multi: false,
     options: ["Jamais", "Occasionnellement", "Tous les jours"],
   },
