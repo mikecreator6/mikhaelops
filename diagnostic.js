@@ -327,7 +327,7 @@ function renderResultStep() {
         <div class="final-cta-glow" aria-hidden="true"></div>
         <div class="final-cta-content">
           <h2 class="final-cta-title diag-final-cta-title">Prêt à passer au <span class="hl-text">niveau supérieur</span> ?</h2>
-          <a href="https://calendly.com/mikhael-creator/30min" target="_blank" rel="noopener" class="btn btn-accent btn-xl">
+          <a href="https://www.cal.eu/mikhael-5kbnzs/30min" target="_blank" rel="noopener" class="btn btn-accent btn-xl">
             Réserver un appel découverte
             <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
           </a>
