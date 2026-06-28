@@ -138,8 +138,22 @@ function renderQuestionStep() {
   document.getElementById("diag-next").addEventListener("click", goNext);
 }
 
+const COUNTRY_CODES = [
+  { code: "+33", label: "🇫🇷 +33" },
+  { code: "+32", label: "🇧🇪 +32" },
+  { code: "+41", label: "🇨🇭 +41" },
+  { code: "+1", label: "🇨🇦 +1" },
+  { code: "+352", label: "🇱🇺 +352" },
+  { code: "+212", label: "🇲🇦 +212" },
+  { code: "+213", label: "🇩🇿 +213" },
+  { code: "+216", label: "🇹🇳 +216" },
+];
+
+const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+const PHONE_DIGITS_REGEX = /^[1-9]\d{6,11}$/; // 7 à 12 chiffres, sans le 0 initial ni l'indicatif
+
 function renderLeadStep() {
-  const progress = Math.round(((TOTAL_STEPS + 1) / (TOTAL_STEPS + 1)) * 100);
+  const dial = state.lead.dial || "+33";
   app.innerHTML = `
     <div class="diag-step diag-fade-in">
       <button type="button" class="diag-back-inline" id="diag-prev"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg> Retour</button>
@@ -150,14 +164,22 @@ function renderLeadStep() {
         <div class="diag-field">
           <label for="diag-prenom">Prénom</label>
           <input type="text" id="diag-prenom" name="prenom" class="diag-input" placeholder="Ton prénom" required value="${escapeAttr(state.lead.prenom)}">
+          <span class="diag-error" id="diag-prenom-error"></span>
         </div>
         <div class="diag-field">
           <label for="diag-email">Email</label>
           <input type="email" id="diag-email" name="email" class="diag-input" placeholder="Adresse mail" required value="${escapeAttr(state.lead.email)}">
+          <span class="diag-error" id="diag-email-error"></span>
         </div>
         <div class="diag-field">
           <label for="diag-tel">Téléphone / WhatsApp</label>
-          <input type="tel" id="diag-tel" name="telephone" class="diag-input" placeholder="06 12 34 56 78" required value="${escapeAttr(state.lead.telephone)}">
+          <div class="diag-phone-row">
+            <select id="diag-dial" name="dial" class="diag-input diag-dial-select">
+              ${COUNTRY_CODES.map((c) => `<option value="${c.code}" ${c.code === dial ? "selected" : ""}>${c.label}</option>`).join("")}
+            </select>
+            <input type="tel" id="diag-tel" name="telephone" class="diag-input" placeholder="6 12 34 56 78" inputmode="numeric" required value="${escapeAttr(state.lead.telephoneLocal || "")}">
+          </div>
+          <span class="diag-error" id="diag-tel-error"></span>
         </div>
         <div class="diag-actions">
           <button type="submit" class="btn btn-accent btn-lg diag-next" id="diag-submit">
@@ -173,16 +195,49 @@ function renderLeadStep() {
   document.getElementById("diag-lead-form").addEventListener("submit", onLeadSubmit);
 }
 
+function setFieldError(fieldId, message) {
+  const errorEl = document.getElementById(`${fieldId}-error`);
+  const inputEl = document.getElementById(fieldId === "diag-tel" ? "diag-tel" : fieldId);
+  if (errorEl) errorEl.textContent = message || "";
+  if (inputEl) inputEl.classList.toggle("diag-input--invalid", !!message);
+}
+
 function onLeadSubmit(e) {
   e.preventDefault();
   const form = e.target;
   const prenom = form.prenom.value.trim();
   const email = form.email.value.trim();
-  const telephone = form.telephone.value.trim();
+  const dial = form.dial.value;
+  const telephoneLocal = form.telephone.value.trim();
+  const phoneDigits = telephoneLocal.replace(/\D/g, "").replace(/^0+/, "");
 
-  if (!prenom || !email || !telephone) return;
+  let hasError = false;
 
-  state.lead = { prenom, email, telephone };
+  if (!prenom) {
+    setFieldError("diag-prenom", "Indique ton prénom.");
+    hasError = true;
+  } else {
+    setFieldError("diag-prenom", "");
+  }
+
+  if (!EMAIL_REGEX.test(email)) {
+    setFieldError("diag-email", "Indique une adresse email valide.");
+    hasError = true;
+  } else {
+    setFieldError("diag-email", "");
+  }
+
+  if (!PHONE_DIGITS_REGEX.test(phoneDigits)) {
+    setFieldError("diag-tel", "Indique un numéro de téléphone valide.");
+    hasError = true;
+  } else {
+    setFieldError("diag-tel", "");
+  }
+
+  if (hasError) return;
+
+  const telephone = `${dial} ${phoneDigits}`;
+  state.lead = { prenom, email, dial, telephoneLocal, telephone };
 
   const submitBtn = document.getElementById("diag-submit");
   submitBtn.disabled = true;
