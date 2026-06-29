@@ -339,7 +339,8 @@ img { max-width: 100%; }
 .quote-mark { margin-bottom: 18px; }
 .testimonial-text { font-size: 15px; line-height: 1.55; color: #8a8a85; font-style: italic; margin: 0 0 auto; }
 .testimonial-person { display: flex; align-items: center; gap: 12px; margin-top: 22px; }
-.avatar { width: 42px; height: 42px; border-radius: 50%; background: #ECECE8; border: 1px solid rgba(36,36,36,0.1); }
+.avatar { width: 42px; height: 42px; border-radius: 50%; background: #ECECE8; border: 1px solid rgba(36,36,36,0.1); overflow: hidden; flex-shrink: 0; }
+.avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .person-name { font-weight: 700; font-size: 14.5px; color: #45453f; }
 .person-role { font-size: 13px; color: #8a8a85; }
 
