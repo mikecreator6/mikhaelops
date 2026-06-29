@@ -442,6 +442,7 @@ img { max-width: 100%; }
 
   .hero { padding-top: 16px; }
   .hero-eyebrow { margin-bottom: 22px; }
+  .hero-copy { margin-top: 14px; }
 
   .hero-stats {
     flex-wrap: nowrap; overflow-x: auto; scroll-snap-type: x mandatory;
