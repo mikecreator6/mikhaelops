@@ -698,7 +698,7 @@ img { max-width: 100%; }
 
 @media (max-width: 560px) {
   .press-title { margin-top: 40px; }
-  .press-row { gap: 24px; }
-  .press-logo { height: 32px; }
+  .press-row { flex-wrap: nowrap; gap: 12px; justify-content: space-between; }
+  .press-logo { height: 22px; }
   .section-title--nowrap { white-space: normal; }
 }
