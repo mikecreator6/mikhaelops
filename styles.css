@@ -444,8 +444,23 @@ img { max-width: 100%; }
   .float-card--dark { left: 0; bottom: 14px; padding: 13px 16px; }
   .float-card--light { right: 0; top: 14px; padding: 11px 14px; }
 
-  .case-row { gap: 16px; }
-  .case-tag { margin-left: 76px; }
+  .case-list {
+    border-top: none;
+    display: flex; flex-wrap: nowrap; gap: 14px;
+    overflow-x: auto; scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch; padding: 4px 4px 10px;
+    margin: 0 -4px;
+  }
+  .case-list::-webkit-scrollbar { display: none; }
+  .case-row {
+    flex-direction: column; align-items: flex-start; gap: 12px;
+    flex-shrink: 0; width: 250px; scroll-snap-align: start;
+    border: 1px solid rgba(36,36,36,0.12); border-bottom: 1px solid rgba(36,36,36,0.12);
+    border-radius: 16px; padding: 18px; background: #fff;
+  }
+  .case-row:hover { padding-left: 18px; }
+  .case-copy { min-width: 0; }
+  .case-tag { margin-left: 0; }
 
   .footer-bottom { flex-direction: column; align-items: flex-start; gap: 12px; }
 }
