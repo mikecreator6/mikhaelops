@@ -272,6 +272,7 @@ img { max-width: 100%; }
   transition: gap .15s ease;
 }
 .card-link:hover, .card-link:focus-visible { gap: 12px; }
+.card-link-text { text-decoration: underline; text-decoration-color: #C3FA0A; text-decoration-thickness: 2px; text-underline-offset: 3px; }
 .card-link--accent { color: #C3FA0A; }
 
 /* ===== Trust section ===== */
