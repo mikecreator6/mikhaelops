@@ -140,13 +140,13 @@ img { max-width: 100%; }
 
 /* ===== Hero ===== */
 .hero {
-  padding-top: clamp(56px, 8vw, 104px);
+  padding-top: clamp(40px, 6vw, 84px);
   padding-bottom: clamp(48px, 6vw, 80px);
   display: grid; grid-template-columns: 1.05fr 0.95fr;
   grid-template-areas: "eyebrow visual" "copy visual";
   gap: clamp(40px, 5vw, 72px); align-items: center;
 }
-.hero-eyebrow { grid-area: eyebrow; align-self: end; }
+.hero-eyebrow { grid-area: eyebrow; align-self: end; margin-bottom: 10px; }
 .hero-stat-label--short { display: none; }
 .hero-copy { grid-area: copy; }
 .hero-visual { grid-area: visual; }
