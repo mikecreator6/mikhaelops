@@ -443,6 +443,8 @@ img { max-width: 100%; }
   .hero { padding-top: 16px; }
   .hero-eyebrow { margin-bottom: 28px; }
   .hero-copy { margin-top: 22px; }
+  .hero-visual { max-width: 110px; }
+  .hero-title { font-size: 30px; }
 
   .hero-stats {
     flex-wrap: nowrap; overflow-x: auto; scroll-snap-type: x mandatory;
