@@ -456,7 +456,7 @@ img { max-width: 100%; }
   .hero-stat-label--full { display: none; }
   .hero-stat-label--short { display: inline; }
 
-  .tools-strip { flex-wrap: nowrap; }
+  .tools-strip { flex-direction: column; align-items: flex-start; gap: 14px; }
   .tools-marquee { display: block; overflow: hidden; width: 100%; }
   .tools-track {
     display: flex; flex-wrap: nowrap; width: max-content;
