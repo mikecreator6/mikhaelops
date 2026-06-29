@@ -440,6 +440,9 @@ img { max-width: 100%; }
   .grid-3--slider .card,
   .grid-3--slider .testimonial { flex: 0 0 86%; scroll-snap-align: start; }
 
+  .hero { padding-top: 16px; }
+  .hero-eyebrow { margin-bottom: 22px; }
+
   .hero-stats {
     flex-wrap: nowrap; overflow-x: auto; scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch; padding-bottom: 4px;
