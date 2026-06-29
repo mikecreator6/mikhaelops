@@ -517,42 +517,6 @@ img { max-width: 100%; }
   to { transform: translateX(-50%); }
 }
 
-/* ===== Diagnostic — bloc homepage ===== */
-.diag-promo {
-  background: #242424; border-radius: 28px; padding: clamp(40px, 5vw, 64px) clamp(28px, 5vw, 64px);
-  display: grid; grid-template-columns: 1.1fr 0.9fr; gap: clamp(32px, 4vw, 56px); align-items: center;
-  position: relative; overflow: hidden;
-}
-.diag-promo-glow {
-  position: absolute; top: -100px; left: -80px; width: 320px; height: 320px; border-radius: 50%;
-  background: radial-gradient(circle, rgba(195,250,10,0.16), transparent 70%);
-}
-.diag-promo-content { position: relative; }
-.diag-promo-title {
-  font-family: 'Space Grotesk', sans-serif; font-weight: 700; color: #F6F6F3;
-  font-size: clamp(28px, 3.4vw, 40px); line-height: 1.08; letter-spacing: -0.02em; margin: 0 0 16px;
-}
-.diag-promo-text { font-size: 16px; line-height: 1.6; color: rgba(246,246,243,0.7); margin: 0 0 28px; max-width: 460px; }
-.diag-promo-perks { list-style: none; margin: 0 0 32px; padding: 0; display: grid; gap: 12px; }
-.diag-promo-perks li {
-  display: flex; align-items: center; gap: 10px; font-size: 14.5px; font-weight: 600; color: #F6F6F3;
-}
-.diag-promo-check { color: #C3FA0A; flex-shrink: 0; }
-.diag-promo-visual {
-  position: relative; border-radius: 20px; background: rgba(246,246,243,0.04);
-  border: 1px solid rgba(246,246,243,0.12); padding: 32px; display: flex; flex-direction: column; gap: 18px;
-}
-.diag-promo-score { display: flex; align-items: baseline; gap: 6px; }
-.diag-promo-score-num { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 56px; color: #C3FA0A; letter-spacing: -0.02em; }
-.diag-promo-score-max { font-size: 18px; color: rgba(246,246,243,0.5); font-weight: 600; }
-.diag-promo-bar { height: 8px; border-radius: 99px; background: rgba(246,246,243,0.12); overflow: hidden; }
-.diag-promo-bar-fill { height: 100%; width: 72%; border-radius: 99px; background: #C3FA0A; }
-.diag-promo-label { font-size: 13px; color: rgba(246,246,243,0.55); }
-
-@media (max-width: 860px) {
-  .diag-promo { grid-template-columns: 1fr; }
-}
-
 /* ===== Diagnostic — page /diagnostic ===== */
 .diag-body { background: #F6F6F3; }
 .diag-topbar {
