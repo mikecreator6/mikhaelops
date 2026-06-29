@@ -473,12 +473,15 @@ img { max-width: 100%; }
   .case-tag { margin-left: 0; }
 
   .case-list-nav {
-    display: block; width: 60px; height: 4px; border-radius: 999px;
-    background: rgba(36,36,36,0.12); margin: 4px auto 0; position: relative; overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+    gap: 8px; margin: 10px auto 0;
   }
-  .case-list-nav span {
-    position: absolute; left: 0; top: 0; bottom: 0; width: 38%;
-    background: #242424; border-radius: 999px;
+  .case-list-nav__dot {
+    width: 8px; height: 8px; border-radius: 999px;
+    background: rgba(36,36,36,0.18); transition: width .2s ease, background .2s ease;
+  }
+  .case-list-nav__dot.is-active {
+    width: 22px; background: #242424;
   }
 
   .footer-bottom { flex-direction: column; align-items: flex-start; gap: 12px; }
