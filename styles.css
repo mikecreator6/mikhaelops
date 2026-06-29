@@ -415,7 +415,8 @@ img { max-width: 100%; }
 
   .grid-3 { grid-template-columns: 1fr; }
   .grid-2 { grid-template-columns: 1fr; }
-  .footer-top { grid-template-columns: 1fr; gap: 32px; }
+  .footer-top { grid-template-columns: 1fr 1fr; gap: 32px 20px; }
+  .footer-top > div:first-child { grid-column: 1 / -1; }
 }
 
 @media (max-width: 560px) {
