@@ -417,8 +417,14 @@ img { max-width: 100%; }
   .wrap { padding-left: 20px; padding-right: 20px; }
   .nav-mobile { padding-left: 20px; padding-right: 20px; }
 
-  .hero-stats { flex-wrap: wrap; row-gap: 18px; }
-  .hero-stat, .hero-stat--last { padding-right: 22px; margin-right: 22px; }
+  .hero-stats {
+    flex-wrap: nowrap; overflow-x: auto; scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch; padding-bottom: 4px;
+  }
+  .hero-stats::-webkit-scrollbar { display: none; }
+  .hero-stat, .hero-stat--last {
+    flex-shrink: 0; padding-right: 22px; margin-right: 22px; scroll-snap-align: start;
+  }
 
   .float-card--dark { left: 0; bottom: 14px; padding: 13px 16px; }
   .float-card--light { right: 0; top: 14px; padding: 11px 14px; }
