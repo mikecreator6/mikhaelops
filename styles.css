@@ -442,15 +442,15 @@ img { max-width: 100%; }
   .grid-3--slider .testimonial { flex: 0 0 86%; scroll-snap-align: start; }
 
   .hero {
-    padding-top: 16px; grid-template-columns: 1fr 1fr;
+    padding-top: 16px; grid-template-columns: 1.4fr 0.6fr;
     grid-template-areas: "eyebrow eyebrow" "title visual" "copy copy";
-    align-items: start;
+    align-items: start; gap: 14px;
   }
-  .hero-eyebrow { margin-bottom: 28px; }
+  .hero-eyebrow { margin-bottom: 14px; }
   .hero-title-wrap { grid-area: title; align-self: center; }
-  .hero-copy { grid-area: copy; margin-top: 22px; }
+  .hero-copy { grid-area: copy; margin-top: 10px; }
   .hero-visual { grid-area: visual; max-width: 110px; align-self: center; }
-  .hero-title { font-size: 22px; margin: 0; }
+  .hero-title { font-size: 26px; margin: 0; }
   .orbit-track { display: none; }
 
   .hero-stats {
