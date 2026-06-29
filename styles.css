@@ -437,7 +437,8 @@ img { max-width: 100%; }
     margin: 0 -4px;
   }
   .grid-3--slider::-webkit-scrollbar { display: none; }
-  .grid-3--slider .card { flex: 0 0 86%; scroll-snap-align: start; }
+  .grid-3--slider .card,
+  .grid-3--slider .testimonial { flex: 0 0 86%; scroll-snap-align: start; }
 
   .hero-stats {
     flex-wrap: nowrap; overflow-x: auto; scroll-snap-type: x mandatory;
