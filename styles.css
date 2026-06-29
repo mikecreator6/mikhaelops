@@ -430,6 +430,15 @@ img { max-width: 100%; }
   .grid-2::-webkit-scrollbar { display: none; }
   .grid-2 .card--plain { flex: 0 0 86%; scroll-snap-align: start; }
 
+  .grid-3--slider {
+    display: flex; flex-wrap: nowrap; gap: 14px;
+    overflow-x: auto; scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch; padding: 4px 4px 10px;
+    margin: 0 -4px;
+  }
+  .grid-3--slider::-webkit-scrollbar { display: none; }
+  .grid-3--slider .card { flex: 0 0 86%; scroll-snap-align: start; }
+
   .hero-stats {
     flex-wrap: nowrap; overflow-x: auto; scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch; padding-bottom: 4px;
