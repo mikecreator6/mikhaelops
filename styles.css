@@ -222,10 +222,13 @@ img { max-width: 100%; }
   border-top: 1px solid rgba(36,36,36,0.08); border-bottom: 1px solid rgba(36,36,36,0.08);
 }
 .tools-label { font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #8a8a85; }
+.tools-marquee { display: contents; }
+.tools-track { display: contents; }
 .tools-list {
   display: flex; flex-wrap: wrap; align-items: center; gap: 16px 30px;
   font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 17px; color: #45453f;
 }
+.tools-list--dup { display: none; }
 .tool { display: inline-flex; align-items: center; gap: 9px; }
 .tool img { height: 21px; width: auto; display: block; }
 .tool img.tool-icon--sm { height: 19px; }
@@ -426,6 +429,18 @@ img { max-width: 100%; }
     flex-shrink: 0; padding-right: 22px; margin-right: 22px; scroll-snap-align: start;
   }
 
+  .tools-strip { flex-wrap: nowrap; }
+  .tools-marquee { display: block; overflow: hidden; width: 100%; }
+  .tools-track {
+    display: flex; flex-wrap: nowrap; width: max-content;
+    animation: tools-scroll 22s linear infinite;
+  }
+  .tools-list, .tools-list--dup {
+    display: flex; flex-wrap: nowrap; gap: 16px 30px;
+  }
+  .tools-list--dup { display: flex; }
+  .tool { white-space: nowrap; }
+
   .float-card--dark { left: 0; bottom: 14px; padding: 13px 16px; }
   .float-card--light { right: 0; top: 14px; padding: 11px 14px; }
 
@@ -433,6 +448,11 @@ img { max-width: 100%; }
   .case-tag { margin-left: 76px; }
 
   .footer-bottom { flex-direction: column; align-items: flex-start; gap: 12px; }
+}
+
+@keyframes tools-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
 }
 
 /* ===== Diagnostic — bloc homepage ===== */
