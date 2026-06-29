@@ -147,6 +147,7 @@ img { max-width: 100%; }
   gap: clamp(40px, 5vw, 72px); align-items: center;
 }
 .hero-eyebrow { grid-area: eyebrow; align-self: end; }
+.hero-stat-label--short { display: none; }
 .hero-copy { grid-area: copy; }
 .hero-visual { grid-area: visual; }
 .hero-title {
@@ -452,6 +453,8 @@ img { max-width: 100%; }
   .hero-stat, .hero-stat--last {
     flex-shrink: 0; padding-right: 22px; margin-right: 22px; scroll-snap-align: start;
   }
+  .hero-stat-label--full { display: none; }
+  .hero-stat-label--short { display: inline; }
 
   .tools-strip { flex-wrap: nowrap; }
   .tools-marquee { display: block; overflow: hidden; width: 100%; }
