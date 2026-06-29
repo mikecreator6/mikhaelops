@@ -406,7 +406,7 @@ img { max-width: 100%; }
   }
   .hero-eyebrow { align-self: auto; }
   .hero-visual { max-width: 220px; margin: 0 auto; }
-  .orbit-track, .float-card { display: none; }
+  .float-card { display: none; }
 
   .grid-3 { grid-template-columns: 1fr; }
   .grid-2 { grid-template-columns: 1fr; }
