@@ -420,6 +420,15 @@ img { max-width: 100%; }
   .wrap { padding-left: 20px; padding-right: 20px; }
   .nav-mobile { padding-left: 20px; padding-right: 20px; }
 
+  .grid-2 {
+    display: flex; flex-wrap: nowrap; gap: 14px;
+    overflow-x: auto; scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    margin: 0 -20px; padding: 4px 20px 10px;
+  }
+  .grid-2::-webkit-scrollbar { display: none; }
+  .grid-2 .card--plain { flex: 0 0 72%; scroll-snap-align: start; }
+
   .hero-stats {
     flex-wrap: nowrap; overflow-x: auto; scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch; padding-bottom: 4px;
